@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Pico: build",
+            "type": "cmake",
+            "command": "build",
+            "targets": [
+                "all"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Build RasPico project"
+        },
+        {
+            "label": "Pico: setup",
+            "type": "shell",
+            "command": "cp",
+            "args": [
+                "${env:PICO_SDK_PATH}/external/pico_sdk_import.cmake",
+                "${workspaceFolder}/"
+            ],
+            "problemMatcher": [],
+            "detail": "Setup RasPico project"
+        }
+    ]
+}
